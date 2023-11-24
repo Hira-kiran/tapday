@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   bottom_sheet: ^4.0.0
   palette_generator: ^0.3.3+3
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:

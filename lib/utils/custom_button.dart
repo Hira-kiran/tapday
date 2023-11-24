@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../res/textstyles.dart';
+
 // ignore: must_be_immutable
 class RoundedButton extends StatelessWidget {
   RoundedButton(
@@ -8,7 +10,7 @@ class RoundedButton extends StatelessWidget {
       this.bgColor,
       this.textColor,
       required this.onTap,
-      this.height = 32,
+      this.height = 45,
       this.width = 100,
       this.loading = false,
       super.key});
@@ -32,18 +34,15 @@ class RoundedButton extends StatelessWidget {
         height: height.h,
         width: width.w,
         decoration: BoxDecoration(
-          color: bgColor ?? Colors.blue,
-          borderRadius: BorderRadius.circular(40.r),
+          color: bgColor ?? const Color(0xff342AEF),
+          borderRadius: BorderRadius.circular(8.r),
         ),
         child: Center(
           child: loading == true
               ? const CircularProgressIndicator(color: Colors.white)
               : Text(
                   text,
-                  style: TextStyle(
-                      color: textColor ?? Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600),
+                  style: AppTextStyles.inter(color: Colors.white),
                 ),
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../res/textstyles.dart';
+
 class AppDecoration {
   InputDecoration fieldDecoration({
     Widget? preIcon,
@@ -15,39 +17,19 @@ class AppDecoration {
     bool isdence = true,
   }) {
     return InputDecoration(
-      prefixIconConstraints: BoxConstraints(
-        minWidth: iconMinWidth ?? 42,
-      ),
-      contentPadding: EdgeInsets.symmetric(
-          horizontal: horizontalPadding ?? 16, vertical: verticalPadding ?? 16),
-      fillColor: fillColor ?? Colors.white,
+      /* contentPadding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding ?? 16, vertical: verticalPadding ?? 16), */
+      fillColor: fillColor ?? const Color(0xffF2F2F7),
       hintText: hintText,
+      hintStyle: AppTextStyles.inter(
+        color: const Color(0xff8E8E93),
+      ),
       prefixIcon: preIcon,
       suffixIcon: suffixIcon != null ? Container(child: suffixIcon) : null,
       isDense: isdence,
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.blue),
-      ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.blue),
-      ),
-      disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.blue),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.blue),
-      ),
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.red),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(radius ?? 10.r)),
-        borderSide: const BorderSide(color: Colors.red),
+        borderRadius: BorderRadius.all(Radius.circular(radius ?? 8.r)),
+        borderSide: BorderSide.none,
       ),
       filled: true,
     );

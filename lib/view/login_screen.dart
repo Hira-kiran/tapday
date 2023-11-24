@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tapday_project/extension/sizedbox.dart';
+import '../res/textstyles.dart';
 import '../utils/custom_button.dart';
 import '../utils/field_validations.dart';
 import '../utils/textfield_decoration.dart';
@@ -23,15 +24,15 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 20.w,
+              horizontal: 16.w,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
-                  "Log in",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                Text(
+                  "Login Screen",
+                  style: AppTextStyles.inter(fontSize: 20.sp),
                 ),
                 30.ph,
                 Form(
@@ -43,27 +44,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           validator: FieldValidator.validateEmail,
                           keyboardType: TextInputType.emailAddress,
                           decoration: AppDecoration().fieldDecoration(
-                              hintText: "Email",
-                              preIcon: const Icon(
-                                Icons.email,
-                                color: Colors.blue,
-                              ))),
+                            hintText: "Email Address",
+                          )),
                       15.ph,
                       TextFormField(
                           controller: passwordController,
                           validator: FieldValidator.validatePassword,
                           decoration: AppDecoration().fieldDecoration(
-                              hintText: "Password",
-                              suffixIcon: const Icon(Icons.visibility),
-                              preIcon: const Icon(
-                                Icons.lock,
-                                color: Colors.blue,
-                              ))),
+                            hintText: "Password",
+                            suffixIcon: const Icon(
+                              Icons.visibility_off,
+                              color: Colors.grey,
+                            ),
+                          )),
                     ],
                   ),
                 ),
-                30.ph,
+                50.ph,
                 RoundedButton(
+                  width: double.infinity,
                   onTap: () {
                     if (_formKey.currentState!.validate()) {}
                   },
